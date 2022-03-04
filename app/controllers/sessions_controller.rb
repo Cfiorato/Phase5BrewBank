@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:current_user] = user.id
+      byebug
       render json: user, status: :ok
     else
       render json: {error: "Invalid Password and/or Username"}
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def logout 
+    byebug
     session.delete :current_user
   end
 

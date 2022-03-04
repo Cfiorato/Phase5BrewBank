@@ -17,6 +17,7 @@ function App() {
       if (resp.ok){
         resp.json()
         .then((user) => {
+          console.log(user)
           setAuthenticated(true)
           setUser(user)
         })

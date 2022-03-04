@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.loadingContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beerContainer {
+  width: 20rem;
+  height: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.beer {
+  display: block;
+  font-size: 4rem;
+  animation: beer .5s ease infinite alternate;
+}
+
+.beer2 {
+  animation-delay: .1s;
+}
+
+.beer3 {
+  animation-delay: .2s;
+}
+
+@keyframes beer {
+  to{
+    transform: translateY(-10px)
+  }
+}
+
+.loadingText {
+  font-size: 3rem;
+  font-weight: 300;
+}

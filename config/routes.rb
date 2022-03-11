@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :breweries, only: [:index, :show]
   resources :favorites, only: [:index, :create]
-  resources :users, only: [:show, :create, :update, :destroy]
+
+  resources :users
   post '/login', to: 'sessions#login'
   delete '/logout', to: 'sessions#logout'
   get '/authorized_user', to: 'users#show'

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::API
   before_action :authorize_user
 
   def current_user
+    byebug
     User.find_by(id: session[:current_user])
   end
 

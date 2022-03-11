@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
 
   def login 
     user = User.find_by(username:params[:username])
-
     if user&.authenticate(params[:password])
       session[:current_user] = user.id
       byebug
@@ -14,7 +13,6 @@ class SessionsController < ApplicationController
   end
 
   def logout 
-    byebug
     session.delete :current_user
   end
 

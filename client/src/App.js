@@ -12,7 +12,7 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false)
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/authorized_user')
+    fetch('/authorized_user')
     .then((resp) => {
       if (resp.ok){
         resp.json()

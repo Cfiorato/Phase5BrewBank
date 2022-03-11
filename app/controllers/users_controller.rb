@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
   skip_before_action :authorize_user, only: [:create, :show]
 
+  def index
+    render json: User.all
+  end
+
   def show 
-    byebug
-    if session[:current_user]
+    if current_user
       render json: current_user, status: :ok
     else
       render json: "No current user set", status: :unauthorized
